@@ -6,7 +6,6 @@ import { GeistMono } from "geist/font"
 export const metadata: Metadata = {
   title: "Typing Test",
   description: "A minimalist typing test application",
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({
