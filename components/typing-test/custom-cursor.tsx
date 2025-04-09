@@ -1,14 +1,16 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { motion } from "framer-motion"
+import { motion, useMotionValue, useSpring } from "framer-motion"
 
 export function CustomCursor() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  const cursorX = useSpring(0, { damping: 25, stiffness: 150 })
+  const cursorY = useSpring(0, { damping: 25, stiffness: 150 })
 
   useEffect(() => {
     const updateMousePosition = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY })
+      cursorX.set(e.clientX)
+      cursorY.set(e.clientY)
     }
 
     window.addEventListener("mousemove", updateMousePosition)
@@ -16,20 +18,20 @@ export function CustomCursor() {
     return () => {
       window.removeEventListener("mousemove", updateMousePosition)
     }
-  }, [])
+  }, [cursorX, cursorY])
 
   return (
     <motion.div
-      className="fixed pointer-events-none z-50 w-2 h-2 rounded-full bg-white mix-blend-difference"
-      animate={{
-        x: mousePosition.x - 4,
-        y: mousePosition.y - 4,
+      className="fixed pointer-events-none z-[9999]"
+      style={{
+        width: "12px",
+        height: "12px",
+        x: cursorX,
+        y: cursorY,
+        transform: "translate(-50%, -50%)",
       }}
-      transition={{
-        type: "spring",
-        damping: 25,
-        stiffness: 150,
-      }}
-    />
+    >
+      <div className="w-full h-full rounded-full bg-white mix-blend-difference" />
+    </motion.div>
   )
 }
