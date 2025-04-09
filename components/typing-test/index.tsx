@@ -7,6 +7,7 @@ import { Tooltip, TooltipContent, TooltipTrigger, TooltipProvider } from "@/comp
 import { cn } from "@/lib/utils"
 import { ThemeSelector } from "./theme-selector"
 import { ResultsScreen } from "./results-screen"
+import { CustomCursor } from "./custom-cursor"
 import { useTypingGame } from "./hooks/use-typing-game"
 import { useCursor } from "./hooks/use-cursor"
 import { getCursorColor, getErrorColor, getThemeTextColor } from "./utils/theme-utils"
@@ -115,93 +116,94 @@ export default function TypingTest({ quotes }: TypingTestProps) {
     </div>
   )
 
-  if (isFinished) {
-    return (
-      <>
-        <Header />
-        <ResultsScreen
-          wpm={wpm}
-          accuracy={accuracy}
-          theme={theme || "light"}
-          setTheme={setTheme}
-          showThemeSelector={showThemeSelector}
-          toggleThemeSelector={toggleThemeSelector}
-          resetGame={resetGame}
-        />
-      </>
-    )
-  }
-
   return (
     <>
-      <Header />
-      <div className="w-full flex flex-col items-center gap-3 py-8 px-4 mt-16">
-        <div
-          ref={containerRef}
-          tabIndex={0}
-          onKeyDown={handleKeyDown}
-          className="w-full max-w-3xl max-h-80 overflow-y-auto focus:outline-none focus:ring-0"
-        >
-          <div ref={textContainerRef} className="relative text-lg md:text-xl leading-relaxed">
-            <span
+      <CustomCursor />
+      {isFinished ? (
+        <>
+          <Header />
+          <ResultsScreen
+            wpm={wpm}
+            accuracy={accuracy}
+            theme={theme || "light"}
+            setTheme={setTheme}
+            showThemeSelector={showThemeSelector}
+            toggleThemeSelector={toggleThemeSelector}
+            resetGame={resetGame}
+          />
+        </>
+      ) : (
+        <>
+          <Header />
+          <div className="w-full flex flex-col items-center gap-3 py-8 px-4 mt-16">
+            <div
+              ref={containerRef}
+              tabIndex={0}
+              onKeyDown={handleKeyDown}
+              className="w-full max-w-3xl max-h-80 overflow-y-auto focus:outline-none focus:ring-0"
+            >
+              <div ref={textContainerRef} className="relative text-lg md:text-xl leading-relaxed">
+                <span
+                  className={cn(
+                    "absolute w-0.5 will-change-transform",
+                    getCursorColor(theme),
+                    isStarted ? "" : "animate-cursor"
+                  )}
+                  style={{
+                    left: `${cursorStyle.left}px`,
+                    top: `${cursorStyle.top}px`,
+                    height: `${cursorStyle.height}px`,
+                    transition: "all 30ms cubic-bezier(0.25, 0.1, 0.25, 1.0)",
+                  }}
+                />
+
+                {currentQuote.split("").map((char, index) => {
+                  let style = "opacity-40"
+
+                  if (index < userInput.length) {
+                    if (userInput[index] === char) {
+                      style = "opacity-100"
+                    } else {
+                      style = cn(getErrorColor(theme), "opacity-100")
+                    }
+                  }
+
+                  return (
+                    <span key={index} data-char={index} className={style}>
+                      {char}
+                    </span>
+                  )
+                })}
+              </div>
+            </div>
+
+            <div
               className={cn(
-                "absolute w-0.5 will-change-transform",
-                getCursorColor(theme),
-                isStarted ? "" : "animate-cursor"
+                "text-sm mt-4 flex items-center gap-1.5 h-5",
+                getThemeTextColor(theme)
               )}
-              style={{
-                left: `${cursorStyle.left}px`,
-                top: `${cursorStyle.top}px`,
-                height: `${cursorStyle.height}px`,
-                transition: "all 30ms cubic-bezier(0.25, 0.1, 0.25, 1.0)",
-              }}
-            />
+            >
+              {isStarted ? (
+                <>
+                  <span className="font-medium">{liveWpm}</span>
+                  <span className="uppercase text-xs tracking-wider">wpm</span>
+                </>
+              ) : (
+                <span className="text-xs uppercase tracking-wider">click and start typing</span>
+              )}
+            </div>
 
-            {currentQuote.split("").map((char, index) => {
-              let style = "opacity-40"
-
-              if (index < userInput.length) {
-                if (userInput[index] === char) {
-                  style = "opacity-100"
-                } else {
-                  style = cn(getErrorColor(theme), "opacity-100")
-                }
-              }
-
-              return (
-                <span key={index} data-char={index} className={style}>
-                  {char}
-                </span>
-              )
-            })}
+            <Button
+              onClick={resetGame}
+              variant="ghost"
+              size="sm"
+              className={cn("mt-2 text-xs uppercase tracking-wider", getThemeTextColor(theme))}
+            >
+              Reset
+            </Button>
           </div>
-        </div>
-
-        <div
-          className={cn(
-            "text-sm mt-4 flex items-center gap-1.5 h-5",
-            getThemeTextColor(theme)
-          )}
-        >
-          {isStarted ? (
-            <>
-              <span className="font-medium">{liveWpm}</span>
-              <span className="uppercase text-xs tracking-wider">wpm</span>
-            </>
-          ) : (
-            <span className="text-xs uppercase tracking-wider">click and start typing</span>
-          )}
-        </div>
-
-        <Button
-          onClick={resetGame}
-          variant="ghost"
-          size="sm"
-          className={cn("mt-2 text-xs uppercase tracking-wider", getThemeTextColor(theme))}
-        >
-          Reset
-        </Button>
-      </div>
+        </>
+      )}
     </>
   )
 }
