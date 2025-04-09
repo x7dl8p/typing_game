@@ -55,43 +55,62 @@ export default function TypingTest({ quotes }: TypingTestProps) {
 
   const Header = () => (
     <div className="fixed top-0 left-0 w-full p-4">
-      <div className="flex items-center gap-2">
-        <ThemeSelector
-          theme={theme || "light"}
-          setTheme={setTheme}
-          showThemeSelector={showThemeSelector}
-          toggleThemeSelector={toggleThemeSelector}
-        />
-        <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <Button
-                variant="ghost"
-                size="icon"
-                className={cn("text-sm", getThemeTextColor(theme))}
-                onClick={() => window.open("https://mohammad.is-a.dev", "_blank")}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="h-5 w-5"
+      <div className="flex justify-between items-center">
+        <div className="flex items-center gap-2">
+          <ThemeSelector
+            theme={theme || "light"}
+            setTheme={setTheme}
+            showThemeSelector={showThemeSelector}
+            toggleThemeSelector={toggleThemeSelector}
+          />
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className={cn("text-sm", getThemeTextColor(theme))}
+                  onClick={() => window.open("https://mohammad.is-a.dev", "_blank")}
                 >
-                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
-                  <circle cx="12" cy="7" r="4" />
-                </svg>
-                <span className="sr-only">Developer Profile</span>
-              </Button>
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>Developer</p>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="h-5 w-5"
+                  >
+                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
+                  </svg>
+                  <span className="sr-only">Developer Profile</span>
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Developer</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <span className="text-base font-bold text-white uppercase tracking-wider" style={{ 
+            textShadow: "1px 1px 2px rgba(0,0,0,0.3)"
+          }}>
+            LONG LIVE GAZA
+          </span>
+          <div className="flex">
+            {/* Palestinian Flag */}
+            <div className="w-6 h-4 relative overflow-hidden rounded-sm shadow-sm">
+              <div className="absolute top-0 w-full h-1/3 bg-black"></div>
+              <div className="absolute top-1/3 w-full h-1/3 bg-white"></div>
+              <div className="absolute bottom-0 w-full h-1/3 bg-[#149954]"></div>
+              <div className="absolute h-full w-2/5 bg-[#CE1126] left-0"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )

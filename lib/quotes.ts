@@ -1,21 +1,49 @@
 export const quotes = [
-  "The sciences, each straining in its own direction, have hitherto harmed us little; but some day the piecing together of dissociated knowledge will open up such terrifying vistas of reality, and of our frightful position therein, that we shall either go mad from the revelation or flee from the deadly light into the peace and safety of a new dark age.",
+  "At first, we thought it was thunder. The children clung to us, their small hands trembling, asking why the sky sounded angry. We had no answer. Because the truth was worse than thunder—it was war, dressed in indifference.",
 
-  "It might seem that I am exaggerating, though no one with imagination and the slightest knowledge of irony could have failed to note the preposterous claims of progress and improvement. The fundamental basis of all assumptions in this matter is that the citizen will be benefited by developing and intensifying the life of the great towns. The assumption is false. Life in great towns is the very reverse of a natural and healthy condition of the human being.",
+  "The morning after, we found our neighbor’s home turned inside out. Toys covered in ash. A baby shoe alone on the road. We didn't cry. We packed what was left of ourselves into silence and walked forward, because grief is a luxury Gaza can’t afford.",
 
-  "Nobody realizes that some people expend tremendous energy merely to be normal. In a time of universal deceit, telling the truth is a revolutionary act. Happiness is not a goal; it is a by-product. Happiness is when what you think, what you say, and what you do are in harmony. The best way to find yourself is to lose yourself in the service of others.",
+  "Hope used to have a shape. It looked like schoolbooks and warm bread. Now it’s a rumor, passed in whispers between survivors: 'Maybe they’ll stop today.' But the bombs don't rest. And the world calls it a 'response.'",
 
-  "The most merciful thing in the world, I think, is the inability of the human mind to correlate all its contents. We live on a placid island of ignorance in the midst of black seas of infinity, and it was not meant that we should voyage far. The sciences, each straining in its own direction, have hitherto harmed us little; but some day the piecing together of dissociated knowledge will open up such terrifying vistas of reality.",
+  "My daughter asked me if the stars still exist above the smoke. I told her yes. I lied. I didn’t want her to know that even the stars seemed to have abandoned us.",
 
-  "For a moment, nothing happened. Then, after a second or so, nothing continued to happen. The ships hung in the sky in much the same way that bricks don't. The Guide is definitive. Reality is frequently inaccurate. In the beginning the Universe was created. This has made a lot of people very angry and been widely regarded as a bad move.",
+  "We built shelters from stories—fairytales that ended with rescue, with heroes. But no one came. Only silence arrived. And in that silence, we learned: the world doesn’t care about brown children unless they can sell you something.",
 
-  "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife. However little known the feelings or views of such a man may be on his first entering a neighbourhood, this truth is so well fixed in the minds of the surrounding families, that he is considered the rightful property of some one or other of their daughters.",
+  "There were names once. Whole families, each with laughter and flaws and Sunday routines. Now they're numbers on news tickers, too many for breath, too fast for sorrow. Memory is resistance. Say their names. All of them.",
 
-  "All happy families are alike; each unhappy family is unhappy in its own way. He stepped down, trying not to look long at her, as if she were the sun, yet he saw her, like the sun, even without looking. If you look for perfection, you'll never be content. It's not all about love and happiness. Life is about getting through each day without too much pain.",
+  "Every wall became a gravestone. Every window a wound. The streets didn't echo with footsteps anymore—just with the ache of absence. Gaza was not a warzone. Gaza was a home. Until they turned it into rubble and called it strategy.",
 
-  "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way.",
+  "They said we used our children as shields. No, we used our bodies as blankets, praying to God they’d survive the night. Do not let them twist the truth into propaganda. Do not let them bury guilt beneath words like 'targeted' and 'surgical.'",
 
-  "In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since. 'Whenever you feel like criticizing anyone,' he told me, 'just remember that all the people in this world haven't had the advantages that you've had.' He didn't say any more, but we've always been unusually communicative in a reserved way, and I understood that he meant a great deal more than that.",
+  "What crime did we commit? To be born on the wrong side of the wire? To dream in Arabic? To exist beneath a flag they wanted erased? Say it plainly: They are killing us. And you are watching.",
 
-  "Many years later, as he faced the firing squad, Colonel Aureliano Buendia was to remember that distant afternoon when his father took him to discover ice. At that time Macondo was a village of twenty adobe houses, built on the bank of a river of clear water that ran along a bed of polished stones, which were white and enormous, like prehistoric eggs. The world was so recent that many things lacked names, and in order to indicate them it was necessary to point.",
+  "Still, we resist. Not with rockets—but with stories, with names, with memory. With love that refuses to be silenced. We plant orange trees in craters. We write poetry on torn walls. We survive, even when survival is rebellion.",
+
+  "And when this ends—because all evil ends, eventually—remember us. Not as victims. But as witnesses. As the voice that wouldn't disappear. As the people who lived, loved, and died with dignity under a sky that forgot them.",
+
+  "Gaza is not a tragedy. Gaza is a crime. And history will ask: Where were you when the children cried out? What did you do, when the smoke rose and the world smelled like burnt futures?",
+
+  "I said I was sorry—but what is sorrow to a mother clutching her child beneath rubble? My words do not warm the body that no longer breathes. I arrived with flowers to a graveyard we all helped build.",
+
+  "We watched from the safety of our screens, sipping coffee while you screamed beneath the smoke. And when we finally spoke, we whispered. I'm sorry we whispered.",
+
+  "Forgive me for thinking neutrality was noble. For calling it ‘complicated’ while your children became hashtags. For seeing you bleed and needing a second opinion before I cared.",
+
+  "We asked for proof—again and again—as if your broken bodies weren’t evidence enough. I see now how cruel doubt can be when dressed as intellect. I'm sorry for needing statistics before believing your pain.",
+
+  "I posted once. Then I moved on. I told myself I had done enough. But silence is not peace—it is permission. And I gave mine.",
+
+  "We lit candles, held signs, and felt good for a moment. But candles flicker. Your homes burned. And when the headlines faded, so did our outrage. I’m sorry justice was trending, not lived.",
+
+  "You cried for ceasefire, we argued over politics. You begged for water, we debated resolutions. You died, and we discussed both sides. I’m sorry our logic became your executioner.",
+
+  "Now I write poems, but you needed protection. I paint murals, but you needed medicine. I offer art because I failed to offer action. I am sorry our beauty arrived after your destruction.",
+
+  "You don’t need our pity—you needed our courage. You needed us to shout, to disrupt, to act. And we sat still, hands clean, souls stained. I am sorry for mistaking comfort for kindness.",
+
+  "We say 'never again' in museums. Yet here we are—again. And this time, the world was watching in real time. I am sorry we saw everything and still chose nothing.",
+
+  "I am sorry for the silence that followed your screams. For the way we turned our backs, thinking it was someone else's fight. For the way we let you down, time and again.",
+
+  "I am sorry for the way we thought our outrage was enough. For the way we thought our hashtags could save you. For the way we thought our empathy could replace your humanity.",
 ]
