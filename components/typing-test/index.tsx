@@ -38,8 +38,27 @@ export default function TypingTest({ quotes }: TypingTestProps) {
 
   const cursorStyle = useCursor(textContainerRef, currentPosition, currentQuote, userInput)
 
+  // Handle input for mobile devices
+  const handleBeforeInput = (e: React.FormEvent) => {
+    e.preventDefault()
+    const event = e.nativeEvent as InputEvent
+    if (event.data) {
+      handleKeyDown({ key: event.data, preventDefault: () => {} } as React.KeyboardEvent)
+    }
+  }
+
+  // Prevent paste and content modification
+  const handlePaste = (e: React.ClipboardEvent) => {
+    e.preventDefault()
+  }
+
+  // Focus management
   useEffect(() => {
     setMounted(true)
+    
+    if (containerRef.current) {
+      containerRef.current.focus()
+    }
   }, [])
 
   useEffect(() => {
@@ -138,9 +157,18 @@ export default function TypingTest({ quotes }: TypingTestProps) {
           <div className="w-full flex flex-col items-center gap-3 py-8 px-4 mt-16 mb-32 md:mb-8">
             <div
               ref={containerRef}
-              tabIndex={0}
+              contentEditable
+              onBeforeInput={handleBeforeInput}
+              onPaste={handlePaste}
               onKeyDown={handleKeyDown}
-              className="w-full max-w-3xl max-h-80 overflow-y-auto focus:outline-none focus:ring-0 transform translate-y-0 transition-transform duration-300"
+              onClick={() => containerRef.current?.focus()}
+              suppressContentEditableWarning
+              className="w-full max-w-3xl max-h-80 overflow-y-auto focus:outline-none focus:ring-0 transform translate-y-0 transition-transform duration-300 caret-transparent relative select-none"
+              style={{
+                minHeight: '2em',
+                touchAction: 'manipulation',
+                userSelect: 'none'
+              }}
             >
               <div ref={textContainerRef} className="relative text-lg md:text-xl leading-relaxed">
                 <span
