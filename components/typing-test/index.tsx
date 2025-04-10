@@ -154,7 +154,7 @@ export default function TypingTest({ quotes }: TypingTestProps) {
       ) : (
         <>
           <Header />
-          <div className="w-full flex flex-col items-center gap-3 py-8 px-4 mt-16 mb-32 md:mb-8">
+          <div className="w-full flex flex-col items-center gap-3 py-8 px-4 mt-16 mb-8">
             <div
               ref={containerRef}
               contentEditable
@@ -163,7 +163,7 @@ export default function TypingTest({ quotes }: TypingTestProps) {
               onKeyDown={handleKeyDown}
               onClick={() => containerRef.current?.focus()}
               suppressContentEditableWarning
-              className="w-full max-w-3xl max-h-80 overflow-y-auto focus:outline-none focus:ring-0 transform translate-y-0 transition-transform duration-300 caret-transparent relative select-none"
+              className="w-full max-w-3xl overflow-hidden focus:outline-none focus:ring-0 transform translate-y-0 transition-transform duration-300 caret-transparent relative select-none"
               style={{
                 minHeight: '2em',
                 touchAction: 'manipulation',
