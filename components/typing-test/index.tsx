@@ -135,12 +135,12 @@ export default function TypingTest({ quotes }: TypingTestProps) {
       ) : (
         <>
           <Header />
-          <div className="w-full flex flex-col items-center gap-3 py-8 px-4 mt-16">
+          <div className="w-full flex flex-col items-center gap-3 py-8 px-4 mt-16 mb-32 md:mb-8">
             <div
               ref={containerRef}
               tabIndex={0}
               onKeyDown={handleKeyDown}
-              className="w-full max-w-3xl max-h-80 overflow-y-auto focus:outline-none focus:ring-0"
+              className="w-full max-w-3xl max-h-80 overflow-y-auto focus:outline-none focus:ring-0 transform translate-y-0 transition-transform duration-300"
             >
               <div ref={textContainerRef} className="relative text-lg md:text-xl leading-relaxed">
                 <span

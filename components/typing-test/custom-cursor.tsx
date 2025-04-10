@@ -22,28 +22,30 @@ export function CustomCursor() {
         --cursor-y: 50vh;
       }
       
-      * {
-        cursor: none !important;
-      }
-      
-      #custom-cursor-dot {
-        position: fixed;
-        width: 10px;
-        height: 10px;
-        background: white;
-        border-radius: 50%;
-        pointer-events: none;
-        mix-blend-mode: difference;
-        left: var(--cursor-x);
-        top: var(--cursor-y);
-        transform: translate(-50%, -50%);
-        z-index: 99999;
-        transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease;
-      }
-      
-      #custom-cursor-dot:hover {
-        width: 12px;
-        height: 12px;
+      @media (hover: hover) and (pointer: fine) {
+        * {
+          cursor: none !important;
+        }
+        
+        #custom-cursor-dot {
+          position: fixed;
+          width: 10px;
+          height: 10px;
+          background: white;
+          border-radius: 50%;
+          pointer-events: none;
+          mix-blend-mode: difference;
+          left: var(--cursor-x);
+          top: var(--cursor-y);
+          transform: translate(-50%, -50%);
+          z-index: 99999;
+          transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease;
+        }
+        
+        #custom-cursor-dot:hover {
+          width: 12px;
+          height: 12px;
+        }
       }
     `
     document.head.appendChild(style)
