@@ -119,7 +119,7 @@ export default function TypingTest({ quotes }: TypingTestProps) {
           <span className="text-base font-bold text-white uppercase tracking-wider" style={{ 
             textShadow: "1px 1px 2px rgba(0,0,0,0.3)"
           }}>
-            LONG LIVE GAZA
+            LONG LIVE GAZA.
           </span>
           <div className="flex">
             {/* Palestinian Flag */}
